@@ -43,7 +43,7 @@ class SoundEffects {
       oscillator.start(context.currentTime);
       oscillator.stop(context.currentTime + 0.1);
     } catch (error) {
-      console.warn('Could not play sound:', error);
+      // Sound failed silently
     }
   }
 
@@ -70,7 +70,7 @@ class SoundEffects {
       oscillator.start(context.currentTime);
       oscillator.stop(context.currentTime + 0.05);
     } catch (error) {
-      console.warn('Could not play hover sound:', error);
+      // Sound failed silently
     }
   }
 
@@ -103,7 +103,7 @@ class SoundEffects {
       oscillator1.stop(context.currentTime + 0.2);
       oscillator2.stop(context.currentTime + 0.2);
     } catch (error) {
-      console.warn('Could not play success sound:', error);
+      // Sound failed silently
     }
   }
 }

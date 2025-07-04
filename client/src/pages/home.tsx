@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import AnimatedBackground from "@/components/animated-background";
-import SocialSidebar from "@/components/social-sidebar";
+import Navbar from "@/components/navbar";
 import ContactModal from "@/components/contact-modal";
 import HeroSection from "@/components/hero-section";
 
@@ -25,8 +25,8 @@ export default function Home() {
       {/* Animated Background */}
       <AnimatedBackground mousePosition={mousePosition} />
       
-      {/* Social Sidebar */}
-      <SocialSidebar onContactClick={() => setIsContactModalOpen(true)} />
+      {/* Navbar */}
+      <Navbar onContactClick={() => setIsContactModalOpen(true)} />
       
       {/* Hero Section */}
       <HeroSection onContactClick={() => setIsContactModalOpen(true)} />

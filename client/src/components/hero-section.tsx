@@ -40,7 +40,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
   };
 
   return (
-    <main className="relative z-10 min-h-screen flex items-center justify-center px-6">
+    <main className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-20">
       <div className={`text-center max-w-4xl mx-auto hero-content transition-opacity duration-300 ${isNearText ? 'opacity-30' : 'opacity-100'}`}>
         {/* Name */}
         <motion.h1
