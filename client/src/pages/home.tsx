@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import AnimatedBackground from "@/components/animated-background";
 import Navbar from "@/components/navbar";
-import ContactModal from "@/components/contact-modal";
 import HeroSection from "@/components/hero-section";
+import AnimatedBackground from "@/components/animated-background";
+import ContactModal from "@/components/contact-modal";
+import SocialSidebar from "@/components/social-sidebar";
 
 export default function Home() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -24,13 +25,13 @@ export default function Home() {
     <div className="relative min-h-screen bg-gray-900 overflow-hidden">
       {/* Animated Background */}
       <AnimatedBackground mousePosition={mousePosition} />
-      
+
       {/* Navbar */}
       <Navbar onContactClick={() => setIsContactModalOpen(true)} />
-      
+
       {/* Hero Section */}
       <HeroSection onContactClick={() => setIsContactModalOpen(true)} />
-      
+
       {/* Contact Modal */}
       <ContactModal 
         isOpen={isContactModalOpen} 
