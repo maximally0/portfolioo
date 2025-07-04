@@ -8,32 +8,6 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onContactClick }: HeroSectionProps) {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isNearText, setIsNearText] = useState(false);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const heroElement = document.querySelector('.hero-content');
-      if (heroElement) {
-        const rect = heroElement.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        
-        const distanceFromCenter = Math.sqrt(
-          Math.pow(e.clientX - centerX, 2) + Math.pow(e.clientY - centerY, 2)
-        );
-        
-        // If mouse is within 200px of text center, make it translucent
-        setIsNearText(distanceFromCenter < 200);
-        
-        setMousePosition({ x: e.clientX, y: e.clientY });
-      }
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    return () => document.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   const handleContactClick = async () => {
     await soundEffects.playButtonClick();
     onContactClick();
@@ -41,7 +15,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
 
   return (
     <main className="relative z-10 min-h-screen flex items-center justify-center px-6 pt-20">
-      <div className={`text-center max-w-4xl mx-auto hero-content transition-opacity duration-300 ${isNearText ? 'opacity-30' : 'opacity-100'}`}>
+      <div className="text-center max-w-4xl mx-auto hero-content">
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
