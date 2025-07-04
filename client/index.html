@@ -1,52 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     
     <!-- Primary Meta Tags -->
     <title>Rishul Chanana | Teenage Builder & Creator</title>
-    <meta name="title" content="Rishul Chanana | Teenage Builder & Creator" />
-    <meta name="description" content="I love to learn new things, host hackathons, and talk to people." />
-    <meta name="keywords" content="Rishul Chanana, developer, hackathons, builder, creator, portfolio" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Rishul Chanana" />
+    <meta name="title" content="Rishul Chanana | Teenage Builder & Creator">
+    <meta name="description" content="I love to learn new things, host hackathons, and talk to people.">
+    <meta name="keywords" content="Rishul Chanana, developer, hackathons, builder, creator, portfolio">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Rishul Chanana">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#8b5cf6" />
-    <meta name="msapplication-navbutton-color" content="#8b5cf6" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#8b5cf6">
+    <meta name="msapplication-navbutton-color" content="#8b5cf6">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://rishulchanana.com/" />
-    <meta property="og:title" content="Rishul Chanana | Teenage Builder & Creator" />
-    <meta property="og:description" content="I love to learn new things, host hackathons, and talk to people." />
-    <meta property="og:site_name" content="Rishul Chanana" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rishulchanana.com/">
+    <meta property="og:title" content="Rishul Chanana | Teenage Builder & Creator">
+    <meta property="og:description" content="I love to learn new things, host hackathons, and talk to people.">
+    <meta property="og:site_name" content="Rishul Chanana">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://rishulchanana.com/" />
-    <meta property="twitter:title" content="Rishul Chanana | Teenage Builder & Creator" />
-    <meta property="twitter:description" content="I love to learn new things, host hackathons, and talk to people." />
-    <meta property="twitter:creator" content="@rishhul" />
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rishulchanana.com/">
+    <meta property="twitter:title" content="Rishul Chanana | Teenage Builder & Creator">
+    <meta property="twitter:description" content="I love to learn new things, host hackathons, and talk to people.">
+    <meta property="twitter:creator" content="@rishhul">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://rishulchanana.com/" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-  </body>
+    <link rel="canonical" href="https://rishulchanana.com/">
+    
+    <style>
+        :root {
+            --background: 224 71% 4%;
+            --foreground: 213 31% 91%;
+            --muted: 223 47% 11%;
+            --muted-foreground: 215.4 16.3% 56.9%;
+            --accent: 216 34% 17%;
+            --accent-foreground: 210 40% 98%;
+            --destructive: 0 63% 31%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 216 34% 17%;
+            --input: 216 34% 17%;
+            --ring: 263 70% 50%;
+            --chart-1: 220 70% 50%;
+            --chart-2: 160 60% 45%;
+            --chart-3: 30 80% 55%;
+            --chart-4: 280 65% 60%;
+            --chart-5: 340 75% 55%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cosmic-glow {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.3), 0 0 40px rgba(139, 92, 246, 0.1);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes float-delayed {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(-5deg); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        @keyframes drift {
+            0% { transform: translateX(0) translateY(0) rotate(0deg); }
+            33% { transform: translateX(20px) translateY(-10px) rotate(120deg); }
+            66% { transform: translateX(-10px) translateY(20px) rotate(240deg); }
+            100% { transform: translateX(0) translateY(0) rotate(360deg); }
+        }
+
+        @keyframes aurora {
+            0%, 100% { opacity: 0.3; transform: scaleX(1) scaleY(1); }
+            50% { opacity: 0.7; transform: scaleX(1.1) scaleY(0.9); }
+        }
+
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-delayed { animation: float-delayed 8s ease-in-out infinite; }
+        .animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        .animate-drift { animation: drift 12s ease-in-out infinite; }
+        .animate-aurora { animation: aurora 8s ease-in-out infinite; }
+
+        /* Background */
+        .animated-background {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding: 1rem 2rem;
+        }
+
+        .navbar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a855f7, #06b6d4);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #06b6d4;
+            transform: scale(1.1);
+        }
+
+        .contact-btn {
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.8), rgba(6, 182, 212, 0.8));
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            background: linear-gradient(135deg, #a855f7, #06b6d4);
+            transform: scale(1.05);
+        }
+
+        /* Mobile menu */
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+            margin-top: 1rem;
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+
+        .mobile-social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-social-link {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #06b6d4;
+        }
+
+        .mobile-contact-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.8), rgba(6, 182, 212, 0.8));
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-contact-btn:hover {
+            background: linear-gradient(135deg, #a855f7, #06b6d4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #a855f7, #06b6d4, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* Contact Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .modal h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .modal p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .email-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .email-input {
+            flex: 1;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: white;
+        }
+
+        .copy-btn {
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, #a855f7, #06b6d4);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .close-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-background">
+        <!-- Base gradient -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(17, 24, 39, 1) 50%, rgba(30, 64, 175, 0.3) 100%);"></div>
+        
+        <!-- Stars will be generated by JavaScript -->
+        <div id="stars"></div>
+        
+        <!-- Floating orbs -->
+        <div style="position: absolute; top: 5rem; left: 5rem; width: 16rem; height: 16rem; background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(244, 114, 182, 0.2)); border-radius: 50%; filter: blur(3rem);" class="animate-float"></div>
+        <div style="position: absolute; bottom: 8rem; right: 6rem; width: 20rem; height: 20rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(6, 182, 212, 0.15)); border-radius: 50%; filter: blur(3rem);" class="animate-float-delayed"></div>
+        <div style="position: absolute; top: 50%; left: 33%; width: 12rem; height: 12rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border-radius: 50%; filter: blur(2rem);" class="animate-float"></div>
+        
+        <!-- Aurora effects -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 8rem; background: linear-gradient(to bottom, rgba(168, 85, 247, 0.05) 0%, rgba(6, 182, 212, 0.03) 50%, transparent 100%);" class="animate-aurora"></div>
+        <div style="position: absolute; bottom: 0; right: 0; width: 100%; height: 10rem; background: linear-gradient(to top, rgba(59, 130, 246, 0.04) 0%, rgba(139, 92, 246, 0.02) 50%, transparent 100%);" class="animate-aurora"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar glass-morphism">
+        <div class="navbar-content">
+            <a href="#" class="logo">Rishul Chanana</a>
+            
+            <div class="nav-links">
+                <a href="https://linkedin.com/in/rishul-chanana" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/rishhul" target="_blank" class="social-link">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://instagram.com/rishhul" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://medium.com/@rishulchanana" target="_blank" class="social-link">
+                    <i class="fab fa-medium"></i>
+                </a>
+                <button class="contact-btn" onclick="openModal()">
+                    <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                    Contact
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars" id="mobile-menu-icon"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu glass-morphism" id="mobile-menu">
+            <div class="mobile-social-grid">
+                <a href="https://linkedin.com/in/rishul-chanana" target="_blank" class="mobile-social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/rishhul" target="_blank" class="mobile-social-link">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://instagram.com/rishhul" target="_blank" class="mobile-social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://medium.com/@rishulchanana" target="_blank" class="mobile-social-link">
+                    <i class="fab fa-medium"></i>
+                </a>
+            </div>
+            <button class="mobile-contact-btn" onclick="openModal()">
+                <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                Contact Me
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Rishul Chanana</h1>
+            <p>I love to learn new things, host hackathons, and talk to people.</p>
+            <button class="contact-btn cosmic-glow" onclick="openModal()">
+                Get In Touch
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2>Let's Connect!</h2>
+            <p>I'd love to hear from you. Send me an email and I'll get back to you soon.</p>
+            
+            <div class="email-container">
+                <input type="text" class="email-input" value="rishulchanana@gmail.com" readonly id="email-input">
+                <button class="copy-btn" onclick="copyEmail()">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+            
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Generate stars
+        function generateStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 300; i++) {
+                const star = document.createElement('div');
+                star.className = 'star animate-twinkle';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = (Math.random() * 3 + 0.5) + 'px';
+                star.style.height = star.style.width;
+                star.style.animationDelay = Math.random() * 5 + 's';
+                star.style.opacity = Math.random() * 0.9 + 0.1;
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Mobile menu toggle
+        let mobileMenuOpen = false;
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-icon');
+            
+            mobileMenuOpen = !mobileMenuOpen;
+            
+            if (mobileMenuOpen) {
+                menu.style.display = 'block';
+                icon.className = 'fas fa-times';
+            } else {
+                menu.style.display = 'none';
+                icon.className = 'fas fa-bars';
+            }
+        }
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('modal').classList.add('show');
+        }
+
+        function closeModal(event) {
+            if (!event || event.target === document.getElementById('modal')) {
+                document.getElementById('modal').classList.remove('show');
+            }
+        }
+
+        function copyEmail() {
+            const emailInput = document.getElementById('email-input');
+            emailInput.select();
+            document.execCommand('copy');
+            
+            // Show feedback
+            const copyBtn = event.target.closest('button');
+            const originalContent = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(() => {
+                copyBtn.innerHTML = originalContent;
+            }, 1000);
+        }
+
+        // Mouse movement effect
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            // Update floating orbs
+            const orbs = document.querySelectorAll('.animate-float, .animate-float-delayed');
+            orbs.forEach((orb, index) => {
+                const multiplier = (index + 1) * 10;
+                orb.style.transform = `translate(${mouseX * multiplier}px, ${mouseY * multiplier}px)`;
+            });
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            generateStars();
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (mobileMenuOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                toggleMobileMenu();
+            }
+        });
+    </script>
+</body>
 </html>
