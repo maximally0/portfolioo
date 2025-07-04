@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { soundEffects } from "@/lib/sound-effects";
 import { 
   FaLinkedinIn, 
   FaXTwitter, 
@@ -38,6 +39,15 @@ const socialLinks = [
 export default function SocialSidebar({ onContactClick }: SocialSidebarProps) {
   const isMobile = useIsMobile();
 
+  const handleContactClick = async () => {
+    await soundEffects.playButtonClick();
+    onContactClick();
+  };
+
+  const handleSocialClick = async () => {
+    await soundEffects.playButtonClick();
+  };
+
   if (isMobile) {
     return (
       <motion.div
@@ -54,6 +64,8 @@ export default function SocialSidebar({ onContactClick }: SocialSidebarProps) {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleSocialClick}
+                onMouseEnter={() => soundEffects.playHover()}
                 className="group relative w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -63,7 +75,8 @@ export default function SocialSidebar({ onContactClick }: SocialSidebarProps) {
               </motion.a>
             ))}
             <motion.button
-              onClick={onContactClick}
+              onClick={handleContactClick}
+              onMouseEnter={() => soundEffects.playHover()}
               className="group relative w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -82,7 +95,7 @@ export default function SocialSidebar({ onContactClick }: SocialSidebarProps) {
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 0.6 }}
-      className="fixed left-6 top-1/2 transform -translate-y-1/2 z-30"
+      className="fixed left-4 md:left-6 top-1/2 transform -translate-y-1/2 z-30"
     >
       <div className="glass-morphism rounded-full p-3">
         <div className="flex flex-col space-y-4">
@@ -92,6 +105,8 @@ export default function SocialSidebar({ onContactClick }: SocialSidebarProps) {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleSocialClick}
+              onMouseEnter={() => soundEffects.playHover()}
               className="group relative w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -104,7 +119,8 @@ export default function SocialSidebar({ onContactClick }: SocialSidebarProps) {
             </motion.a>
           ))}
           <motion.button
-            onClick={onContactClick}
+            onClick={handleContactClick}
+            onMouseEnter={() => soundEffects.playHover()}
             className="group relative w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}

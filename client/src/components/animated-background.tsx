@@ -68,22 +68,29 @@ export default function AnimatedBackground({ mousePosition }: AnimatedBackground
       
       {/* Star field */}
       <div className="absolute inset-0">
-        {stars.map((star, index) => (
-          <motion.div
-            key={star.id}
-            className="absolute bg-white rounded-full animate-twinkle"
-            style={{
-              left: `${star.x}%`,
-              top: `${star.y}%`,
-              width: `${star.size}px`,
-              height: `${star.size}px`,
-              opacity: star.opacity,
-              animationDelay: `${star.animationDelay}s`,
-              x: index % 5 === 0 ? mousePosition.x * 5 : 0,
-              y: index % 5 === 0 ? mousePosition.y * 5 : 0,
-            }}
-          />
-        ))}
+        {stars.map((star, index) => {
+          let animationClass = "animate-twinkle";
+          if (index % 3 === 0) animationClass = "animate-twinkle-delayed";
+          if (index % 7 === 0) animationClass = "animate-sparkle";
+          
+          return (
+            <motion.div
+              key={star.id}
+              className={`absolute bg-white rounded-full ${animationClass}`}
+              style={{
+                left: `${star.x}%`,
+                top: `${star.y}%`,
+                width: `${star.size}px`,
+                height: `${star.size}px`,
+                opacity: star.opacity,
+                animationDelay: `${star.animationDelay}s`,
+                x: index % 5 === 0 ? mousePosition.x * 5 : 0,
+                y: index % 5 === 0 ? mousePosition.y * 5 : 0,
+                boxShadow: index % 7 === 0 ? "0 0 10px rgba(255, 255, 255, 0.8)" : "none",
+              }}
+            />
+          );
+        })}
       </div>
       
       {/* Grain texture overlay */}

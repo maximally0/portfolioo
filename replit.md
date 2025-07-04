@@ -101,10 +101,17 @@ This is a futuristic, immersive personal portfolio website for Rishul Chanana bu
 ```
 Changelog:
 - July 04, 2025. Initial setup
+- July 04, 2025. Enhanced user experience:
+  - Improved responsive social sidebar positioning
+  - Added dynamic star animations with twinkling and sparkle effects
+  - Implemented sound effects for button interactions
+  - Added text transparency effect when mouse is near hero content
+  - Created Web Audio API-based sound system for clicks, hovers, and success sounds
 ```
 
 ## User Preferences
 
 ```
 Preferred communication style: Simple, everyday language.
+Features requested: Dynamic sidebar, enhanced star animations, sound effects for buttons, text transparency on mouse proximity
 ```

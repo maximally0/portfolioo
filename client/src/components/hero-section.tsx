@@ -1,14 +1,47 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { soundEffects } from "@/lib/sound-effects";
 
 interface HeroSectionProps {
   onContactClick: () => void;
 }
 
 export default function HeroSection({ onContactClick }: HeroSectionProps) {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isNearText, setIsNearText] = useState(false);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const heroElement = document.querySelector('.hero-content');
+      if (heroElement) {
+        const rect = heroElement.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const distanceFromCenter = Math.sqrt(
+          Math.pow(e.clientX - centerX, 2) + Math.pow(e.clientY - centerY, 2)
+        );
+        
+        // If mouse is within 200px of text center, make it translucent
+        setIsNearText(distanceFromCenter < 200);
+        
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      }
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+    return () => document.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  const handleContactClick = async () => {
+    await soundEffects.playButtonClick();
+    onContactClick();
+  };
+
   return (
     <main className="relative z-10 min-h-screen flex items-center justify-center px-6">
-      <div className="text-center max-w-4xl mx-auto">
+      <div className={`text-center max-w-4xl mx-auto hero-content transition-opacity duration-300 ${isNearText ? 'opacity-30' : 'opacity-100'}`}>
         {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -36,7 +69,8 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
         >
           <Button
-            onClick={onContactClick}
+            onClick={handleContactClick}
+            onMouseEnter={() => soundEffects.playHover()}
             size="lg"
             className="group relative px-8 py-4 bg-gradient-to-r from-purple-600/80 to-cyan-600/80 hover:from-purple-600 hover:to-cyan-600 text-lg font-semibold transition-all duration-300 hover:scale-105 cosmic-glow backdrop-blur-sm border border-white/20 text-white"
           >
