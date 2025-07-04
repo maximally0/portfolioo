@@ -1,0 +1,43 @@
+Design a futuristic, immersive, and minimal personal portfolio website for Rishul Chanana. The website should have a sci-fi, elegant Zealy.io-like visual aesthetic — dark mode, glowing gradient shapes, starry sky, and floating UI effects.
+
+🎯 Goal:
+To create a clean and impressive personal landing page that introduces who Rishul is and links to his socials — with future sections expandable modularly.
+
+🧩 Website Structure:
+
+1. **Full-Screen Hero Section (Centered)**  
+   - Name: “Rishul Chanana” in a large, bold, modern font  
+   - Subtitle/bio: “I love to learn new things, I love to host hackathons, and I love to talk to people.”  
+   - Button: “Contact Me” — opens a glassmorphism modal with:
+     - Email: hello@rishulchanana.com
+     - Copy button
+     - Optional “Send Email” button
+   - All text should animate in smoothly (fade/slide)
+
+2. **Floating Sidebar (Left) — Social Icons with Actual Links**
+   - LinkedIn → https://www.linkedin.com/in/rishul-chanana/
+   - X (Twitter) → https://x.com/rishhul
+   - Instagram → https://instagram.com/chanana_rishul
+   - Medium → https://medium.com/@rishulchanana36
+   - Email → mailto:hello@rishulchanana.com
+   - Style: vertical pill-style container with soft hover glow
+
+3. **Visual Background + Interactions**
+   - Background: deep black with a soft nebula gradient (lavender, purple, blue)
+   - Animated star field with many scattered twinkling stars
+   - Large abstract glowing orbs in 2–3 corners
+   - Mouse-follow interaction: stars and blobs shift slightly in response to cursor movement
+   - Subtle floating/parallax on all decorative elements
+   - Add soft grain or blur texture layer for depth
+
+4. **Styling & Design**
+   - Fonts: Futuristic modern sans-serif (e.g., Outfit, Sora, Inter)
+   - Effects: glassmorphism for popups, soft ambient glows, subtle button shadows
+   - Animation: slow floating orbs, hover scale on icons, smooth modal pop
+   - Mobile responsiveness: Social bar collapses to bottom; text and elements reflow
+
+5. **Future-proof Structure**
+   - Make the code/layout easy to expand later (e.g., Projects, Blog, Speaking sections)
+   - Modular structure — current version is just the landing
+
+🔒 No red, no pixel-art styling. Avoid harsh shadows or neon clutter. The vibe should feel like a builder’s personal space floating in a soft digital cosmos.
